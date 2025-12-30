@@ -3,6 +3,7 @@
 - 使用alloc_pages返回的page结构体直接作为free_pages的参数进行页面释放；显示*Unable to handle kernel paging request at virtual address*
 ## 参数类型兼容性
 __free_pages直接操作page结构体和order，属于底层接口
+
 free_pages接受虚拟地址，内部转换后调用__free_pages
 alloc_pages返回的是page结构体，自然要和同样操作page结构体的__free_pages配对
 - alloc_pages 返回值
